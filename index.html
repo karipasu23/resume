@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karisma Pasupalak - Product Engineer</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #0066cc;
+            --secondary-color: #f0f8ff;
+            --text-color: #333;
+            --light-gray: #f5f5f5;
+            --medium-gray: #ddd;
+            --dark-gray: #666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--light-gray);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1, h2, h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        ul {
+            list-style-type: none;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 40px 0;
+        }
+        
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        
+        .profile h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .profile h2 {
+            font-size: 1.5rem;
+            font-weight: normal;
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* Main Content Styles */
+        main {
+            padding: 40px 0;
+        }
+        
+        section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--medium-gray);
+        }
+        
+        .section-title h2 {
+            margin-bottom: 0;
+        }
+        
+        /* Skills Section */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .skill-tag {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* Experience & Projects Sections */
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid var(--medium-gray);
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .timeline-subtitle {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .timeline-date {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+        
+        .timeline-content {
+            padding-left: 20px;
+        }
+        
+        .timeline-content ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        
+        .timeline-content li {
+            margin-bottom: 8px;
+        }
+        
+        /* Education Section */
+        .education-item {
+            margin-bottom: 25px;
+        }
+        
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Awards Section */
+        .awards-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .award-title {
+            font-weight: 500;
+        }
+        
+        .award-org {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Two-column layout */
+        .two-column {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .column {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        /* Languages Section */
+        .languages-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .language-item {
+            background-color: var(--secondary-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .profile {
+                padding: 0 20px;
+            }
+            
+            .timeline-header {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .two-column {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="profile">
+                <div class="profile-image">KP</div>
+                <h1>KARISMA BHABANISANKAR PASUPALAK</h1>
+                <h2>Product Engineer</h2>
+                <div class="contact-info">
+                    <span>📍 Santacruz East, Mumbai, 400055</span>
+                    <span>📞 +91 8249478411</span>
+                    <span>✉️ karismapasupalak@outlook.com</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <div class="two-column">
+            <div class="column">
+                <section id="skills">
+                    <div class="section-title">
+                        <h2>Skills</h2>
+                    </div>
+                    <div class="skills-grid">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">DSA</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Raspberry Pi</span>
+                        <span class="skill-tag">Electronic Circuit Design</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">Full Stack Development</span>
+                        <span class="skill-tag">AIML</span>
+                    </div>
+                </section>
+                
+                <section id="education">
+                    <div class="section-title">
+                        <h2>Education</h2>
+                    </div>
+                    <div class="education-item">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-title">Bachelor of Technology: Electronics</div>
+                                <div class="timeline-subtitle">Vidyalankar Institute of Technology, Mumbai</div>
+                            </div>
+                            <div class="timeline-date">Expected in 2025</div>
+                        </div>
+                        <div class="timeline-content">
+                            <p>Percentage: 71%</p>
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-title">CLASS XII</div>
+                                <div class="timeline-subtitle">Nirmala Memorial College of Science And Commerce, Mumbai</div>
+                            </div>
+                            <div class="timeline-date">2021</div>
+                        </div>
+                        <div class="timeline-content">
+                            <p>Percentage: 90%</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="awards">
+                    <div class="section-title">
+                        <h2>Awards & Scholarships</h2>
+                    </div>
+                    <ul class="awards-list">
+                        <li>
+                            <div>
+                                <div class="award-title">Finalist</div>
+                                <div class="award-org">Smart India Hackathon, 11/2023</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <div class="award-title">Best Student of the Year</div>
+                                <div class="award-org">Nirmala Memorial College of Science and Commerce, 02/2020</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <div class="award-title">First Place</div>
+                                <div class="award-org">National Level Science Talent Search Examination, 12/2017</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <div class="award-title">First Place</div>
+                                <div class="award-org">Interschool English Elocution Competition</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <div class="award-title">Scholarship</div>
+                                <div class="award-org">Maharashtra Rajya Pariksha Parishad</div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+                
+                <section id="languages">
+                    <div class="section-title">
+                        <h2>Languages</h2>
+                    </div>
+                    <div class="languages-list">
+                        <span class="language-item">English</span>
+                        <span class="language-item">Hindi</span>
+                        <span class="language-item">Marathi</span>
+                        <span class="language-item">French</span>
+                    </div>
+                </section>
+            </div>
+            
+            <div class="column">
+                <section id="experience">
+                    <div class="section-title">
+                        <h2>Experience</h2>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-title">PRODUCT ENGINEER</div>
+                                <div class="timeline-subtitle">Grovator</div>
+                            </div>
+                            <div class="timeline-date">06/2024 - 08/2024</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-title">SOFTWARE ENGINEER</div>
+                                <div class="timeline-subtitle">Yesbee Fire and Security Services</div>
+                            </div>
+                            <div class="timeline-date">11/2023 - 03/2024</div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="projects">
+                    <div class="section-title">
+                        <h2>Projects</h2>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-title">Masterji</div>
+                            </div>
+                            <div class="timeline-date">06/2024 - Present</div>
+                        </div>
+                        <div class="timeline-content">
+                            <ul>
+                                <li>Masterji is a digital platform designed to connect tailors, designers, and customers in one place.</li>
+                                <li>It allows tailors and designers to showcase their work, offer customization services, and manage orders, while customers can find and interact with professionals to create personalized clothing.</li>
+                                <li>The platform includes features like virtual fittings, a marketplace for ready-made clothing, and tools for collaboration within the fashion community.</li>
+                                <li>Masterji aims to modernize traditional tailoring by providing a convenient and accessible solution for both professionals and customers, fostering a vibrant and sustainable fashion ecosystem.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-title">Smart Tag</div>
+                            </div>
+                            <div class="timeline-date">06/2024 - 07/2024</div>
+                        </div>
+                        <div class="timeline-content">
+                            <ul>
+                                <li>Developed a smart tracker using Raspberry Pi and Python, offering precise tracking capabilities for objects or locations with enhanced control and flexibility included with parental control.</li>
+                                <li>It can be used by Alzheimer's patients and school-going kids</li>
+                                <li>It helps parents ensure the safety of their children and prevent any mishaps</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-title">YF Services</div>
+                            </div>
+                            <div class="timeline-date">11/2023 - 02/2024</div>
+                        </div>
+                        <div class="timeline-content">
+                            <ul>
+                                <li>Designed a platform for a company's product using Java, where I developed two distinct portals: one for users and one for admins</li>
+                                <li>The user portal allows customers to interact with the product, while the admin portal provides tools for managing and overseeing operations</li>
+                                <li>Integrated an API payment gateway, enabling secure and seamless online transactions within the platform</li>
+                                <li>This setup ensures efficient user management and a streamlined payment process</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-title">E-waste Facility Locator</div>
+                            </div>
+                            <div class="timeline-date">08/2023 - 10/2023</div>
+                        </div>
+                        <div class="timeline-content">
+                            <ul>
+                                <li>Developed a website that facilitates finding nearby waste collection centers through a map interface, ensuring users can easily access information on operating hours, accepted materials, and potential recycling incentives.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-title">Wireless EV Charger</div>
+                            </div>
+                            <div class="timeline-date">05/2023 - 11/2023</div>
+                        </div>
+                        <div class="timeline-content">
+                            <ul>
+                                <li>Developed a wireless charging system for electric vehicles, which eliminates the need of physically connecting the vehicle to the charging station.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-title">Rescue Connect</div>
+                            </div>
+                            <div class="timeline-date">07/2023 - 10/2023</div>
+                        </div>
+                        <div class="timeline-content">
+                            <ul>
+                                <li>Developed a web app for efficient communication, collaboration, and resource sharing among rescue agencies during crises.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="volunteer">
+                    <div class="section-title">
+                        <h2>Volunteer Experience</h2>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-title">Role: Rescue and feeding</div>
+                            </div>
+                            <div class="timeline-date">03/2020 - Present</div>
+                        </div>
+                        <div class="timeline-content">
+                            <p>I am rescuing and feeding more than 30 dogs and cats in my area and nearby area, one of the prominent animal activists.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="leadership">
+                    <div class="section-title">
+                        <h2>Positions of Responsibility</h2>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-title">Photographer</div>
+                                <div class="timeline-subtitle">V calibre Clickers</div>
+                            </div>
+                            <div class="timeline-date">05/2022 - 11/2023</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="timeline-title">Team Leader</div>
+                                <div class="timeline-subtitle">Smart India Hackathon</div>
+                            </div>
+                            <div class="timeline-date">07/2023 - 12/2023</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 Karisma Bhabanisankar Pasupalak. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
